@@ -26,32 +26,32 @@
 
 ### 使用到的特性
 
-多进程下的进程安全。有多线程共享的资源要注意使用线程安全的实现。
-接口 适配器 GUI Socket 守护进程
-观察者模式（事件监听器实现 事件分发 处理）
-工厂模式（生产Packets，保证产生的包是预期的，不会出现异常）
-输入输出流，包装，对象序列化（传输）
+- 多进程下的进程安全。有多线程共享的资源要注意使用线程安全的实现。
+- 接口 适配器 GUI Socket 守护进程
+- 观察者模式（事件监听器实现 事件分发 处理）
+- 工厂模式（生产Packets，保证产生的包是预期的，不会出现异常）
+- 输入输出流，包装，对象序列化（传输）
 
 ### 零零星星的关键词
 
-多态 运行期绑定
-常量群接口（网上有说不建议这么用的，建议使用Enum代替） 标志型接口（比如Clone）
-StringBuilder 非线程安全 StringBuffer 线程安全
+- 多态 运行期绑定
+- 常量群接口（网上有说不建议这么用的，建议使用Enum代替） 标志型接口（比如Clone）
+- StringBuilder 非线程安全 StringBuffer 线程安全
 ```
 String str = new String("haha");//直接创建对象，返回对象的引用，对象不放入heap
 String str = "haha";//先检查heap，使用equals()，如果已存在，返回对象的引用，如果没有，创建该对象，把该对象放入heap，返回对象的引用。
 ```
-JDK1.7以上 catch语句可以一句捕获多个并列级别的Exception。用竖线分割。
-JDK1.7以上 try...with语法。eg:`try(Autocloseable)`会在`finally`中自动close对象。
-泛型 多个参数 注意二义性。
-泛型通配符
-泛型方法
-`JButton.setMnemonic('s')`设定快捷键，第一次出现的快捷键对应的字母会有下划线提示。ALT+S触发。
-自定义输入输出流继承FilterOut(In)putStream，可以定义输出的位置，而继承FileOut(In)putStream没那么方便了。FilterOutputStream的其余`write(...)`调用`write(int x)`方法，修改一个就可以了。
-transient 关键词表示无需序列化。
-static变量默认不会被序列化。 Enternalizable extends Serializable
-`System.setOut(PrintStream)`可以修改输出位置。
-InputStreamReader 桥接。
-`thread.setDeamon(true)` 守护线程
-Thread.interrupt() 改变标志位。
-ObjectInputStream 特殊，C/S获取输入输出流的时候需要反向获取才能对接上。
+- JDK1.7以上 catch语句可以一句捕获多个并列级别的Exception。用竖线分割。
+- JDK1.7以上 try...with语法。eg:`try(Autocloseable)`会在`finally`中自动close对象。
+- 泛型 多个参数 注意二义性。
+- 泛型通配符
+- 泛型方法
+- `JButton.setMnemonic('s')`设定快捷键，第一次出现的快捷键对应的字母会有下划线提示。ALT+S触发。
+- 自定义输入输出流继承FilterOut(In)putStream，可以定义输出的位置，而继承FileOut(In)putStream没那么方便了。FilterOutputStream的其余`write(...)`调用`write(int x)`方法，修改一个就可以了。
+- transient 关键词表示无需序列化。
+- static变量默认不会被序列化。 Enternalizable extends Serializable
+- `System.setOut(PrintStream)`可以修改输出位置。
+- InputStreamReader 桥接。
+- `thread.setDeamon(true)` 守护线程
+- Thread.interrupt() 改变标志位。
+- ObjectInputStream 特殊，C/S获取输入输出流的时候需要反向获取才能对接上。
